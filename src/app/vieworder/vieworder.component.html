@@ -1,0 +1,48 @@
+<app-nav></app-nav>
+<div class="jumbotron text-center">
+    <h1 class="display-3">Thank You!</h1>
+    <p class="lead"><strong>Your Order (Order Id: {{order.orderId}}) Has Been Placed</strong> </p>
+
+    <hr>
+    
+    <p class="lead">
+      <a class="btn btn-primary btn-sm" routerLink="/restaurant" role="button">Continue to homepage</a>
+      <table class="table table-bordered">
+   
+        <thead>
+          <tr>
+            <th>Order Id</th>
+            <th>Order Date </th>
+            <th>Order Price</th>
+            
+            <th>
+                <table>
+                    <tr>
+                        <th>Restaurant Name</th>
+                        <th>Item Name</th>
+                        <th>Item price</th>
+                        <th>Item Quantity</th>
+                        <th>Total Price</th>
+                    </tr>
+                </table>
+
+            </th>
+           <th colspan="2">Action</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr >
+              <td><img src="" alt="image"/></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              
+          </tr>
+        </tbody>
+      </table>
+
+
+    </div>
+
+<app-footer></app-footer>

@@ -1,38 +1,41 @@
 <div class="container h-100">
-    <div class="sidenav">
-        <img class="landing-image " [src]="imagePath[0]" />"
-  </div>
-  <div class="main">
-     <div class="col-md-6 col-sm-12">
-        <div class="login-form">
+   <div class="sidenav">
+       <img class="landing-image " [src]="imagePath[0]" />"
+ </div>
+ <div class="main">
+    <div class="col-md-6 col-sm-12">
+     <div class="brand">
+        <div><img class="logo" [src]="imagePath[1]" /></div>
+        <div class="logo-title">LogIn</div>
+      </div>
+     
+       <div class="login-form"> 
 
-           <form action=" " method="post" >
+          <form action=" " method="post" >
 
-            <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
-          <div class="alert alert-success" *ngIf='loginSuccess'>{{successMessage}}</div>
           
+         
 
-              <div class="form-group">
-                 <label>Enter Phone Number</label>
-                 
-                 <input type="text" class="form-control" [(ngModel)]="username" pattern="[0-9]{10}" title="Enter 10 digit mobile number" placeholder="Enter Phone Number" required>
-              </div>
-              <div class="form-group">
-                 <label>Enter Password</label>
-                 <input type="password" class="form-control" [(ngModel)]="password" placeholder="Enter Password" required>
-              </div>
-              
-              <div id = "userType" >
-                  <input type="radio" id="customer" name="userType" value="customer" required>
-                <label for="customer">Login as Customer</label><br>
-                <input type="radio" id="restaurant" name="userType" value="restaurant"required>
-                <label for="restaurant">Login as Restaurant</label><br>
-              </div>
-              <br>
-              <button type="submit" (click)=checkLogin() class="btn btn-black">Login</button> <!--(click)=checkLogin()-->
-              <p>New to MOW     <a [routerLink]="['../login']" > Sign Up </a> </p>                           
-           </form>
-        </div>
-     </div>
-  </div>
+             <div class="form-group">
+                <label>Enter Phone Number</label>
+                
+                <input type="text" class="form-control" [(ngModel)]="phone" name="phone" pattern="[0-9]{10}" title="Enter 10 digit mobile number" placeholder="Enter Phone Number" required>
+             </div>
+             <div class="form-group">
+                <label>Enter Password</label>
+                <input type="password" class="form-control" name="password" [(ngModel)]="password" placeholder="Enter Password" required>
+             </div>
+             
+
+             <br>
+             <button type="submit"  (click)=checkLogin() class="btn btn-black">Login</button> <!--(click)=checkLogin()-->
+             <br>
+
+             <p><br>New to MOW ?  <br>
+              Create an account   <a href="#signUp"  class="btn btn-black">  Sign Me Up </a> </p>     
+
+          </form>
+       </div>
+    </div>
+ </div>
 </div>

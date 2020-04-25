@@ -1,0 +1,42 @@
+<app-nav></app-nav>
+
+<!-- Menu -->
+
+<section id="menu" class="parallax-section">
+	<div class="container">
+				<div class="row">   
+					<div class="col-md-offset-2 col-md-12 col-sm-12 text-center">
+				<h1 class="heading text-center">Select Your Favourites</h1>
+				<hr>
+						<h5>{{message}}</h5>
+
+				<div  class="card-deck col-md-4 col-sm-4 text-center" *ngFor="let foodItem of foods|async">
+					<div class="col-md-3 col-sm-3 wow fadeInUp"  data-wow-delay="0.9s">
+				   
+						   <div class="card">
+							<img [src] = "imagePath[0]" class = "card-img-top"/>
+							<div class="card-body">
+								<h5 class="card-title">{{foodItem.foodName}}</h5>
+								<p class="card-text">{{foodItem.description}}</p>
+								<div style="float: left; " ><p style="display:inline; "><span>&#8377;</span> {{foodItem.price}}</p> </div> 
+							  
+							 <a class="btn btn-primary" (click)="addtoCart(foodItem.id)"> Add To Cart</a>
+							  <p class="card-text"><small class="text-muted">
+									
+							  </small></p>
+							</div>
+							</div>
+							
+						   
+					 </div> 
+					
+				</div>   
+				
+				
+
+            </div>   
+		</div>
+	</div>
+</section>
+
+<app-footer></app-footer>

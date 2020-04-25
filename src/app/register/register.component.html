@@ -5,59 +5,52 @@
   <div class="main">
      <div class="col-md-6 col-sm-12">
         <div  class="form">
-            <h3 >User Registration</h3>
+            <div class="brand">
+                <div><img class="logo" [src]="imagePath[1]" /></div>
+                <div class="logo-title">User Registeration</div>
+              </div>
             <form id="registrationform" action="saveDealer" method="post" modelAttribute="dealer">
             
             <br>
             <br>
+            <div id = "userType"  >
+                <input type="radio"  [checked]="model.role === 'Customer'" (change)="OnRoleChanged('Customer')" id="customer" name="userType" value="customer" required>
+                <label for="customer">Register as Customer</label> &nbsp; &nbsp; &nbsp;
+                <input type="radio" id="restaurant" [checked]="model.role === 'Restaurant'" (change)="OnRoleChanged('Restaurant')" name="userType" value="restaurant"required>
+                <label for="restaurant">Register as Restaurant</label><br>
+            </div>
+            <br>
+            <br>
 
-        <p class="contact"><label for="fname">First Name</label></p>
-        <input id="fname" name="fname" placeholder="Enter first name" [(ngModel)]="model.fname" required tabindex="2" type="text">
-
-        <p class="contact"><label for="lname">Last Name</label></p>
-        <input id="lname" name="lname" placeholder="Enter last name" [(ngModel)]="model.lname" required tabindex="3" type="text">
-
-        <p class="contact"><label for="email">Email</label></p>
-        <input id="email" name="email" placeholder="Enter Email" [(ngModel)]="model.email" required tabindex="1" type="email">
+        <p class="contact"><label for="name">First Name</label></p>
+        <input id="name" name="name" placeholder="Enter Name" [(ngModel)]="model.name" required tabindex="2" type="text">
 
         <p class="contact"><label for="password">Enter a password</label></p>
         <input type="password" id="password" name="password" [(ngModel)]="model.password" required tabindex="4">
         
-        <p class="contact"><label for="password">Enter a password</label></p>
-        <input type="password" id="password" name="password" [(ngModel)]="model.cnfPassword" required tabindex="4">
-
         <p class="contact"><label for="phone">Mobile phone</label></p>
-        <input id="phone" name="phoneNo" placeholder="phone number" pattern="[0-9]{10}" title="Enter 10 digit mobile number" placeholder="Enter Phone Number" [(ngModel)]="model.phone" required type="tel">
+        <input id="phone" name="phone" placeholder="phone number" pattern="[0-9]{10}" title="Enter 10 digit mobile number" placeholder="Enter Phone Number" [(ngModel)]="model.phone" required type="tel">
         
-        <p class="street"><label for="street">Address</label></p>
-        <input id="street" name="street" placeholder="Street Address" [(ngModel)]="model.address" required tabindex="7" type="text">
+        <p class="baseAddress"><label for="baseAddress">Address</label></p>
+        <input id="baseAddress" name="baseAddress" placeholder="Address" [(ngModel)]="model.address.baseAddress" required tabindex="7" type="text">
 
-        <div class="select-style city" name="city" tabindex="8">  
-            <select class="form-control" id="city" [(ngModel)] ="model.city" name = "city" required>  
-              <option  *ngFor="let city of cities" [value]="city" >{{city}}</option>  
-            </select>  
-          </div>
+       
+        <p class="city"><label for="city">City</label></p>
+        <input id="city" name="city" placeholder="City" [(ngModel)]="model.address.city" required tabindex="7" type="text">
 
-        <!-- <select class="select-style city" name="city" tabindex="8">
-             <option value="select">Select Your City</option>
-                <option value="Bangalore">Noida</option>
-                <option value="Chennai">Greater Noida</option>
-                <option value="Delhi">Delhi</option>             
-        </select><br><br> -->
+        <p class="state"><label for="state">State</label></p>
+        <input id="state" name="state" placeholder="State" [(ngModel)]="model.address.state" required tabindex="7" type="text">
+
 
             <p class="pincode"><label for="pincode">Pin Code</label></p>
-            <input id="pincode" name="pincode" placeholder="Enter Pin Code" [(ngModel)]="model.address" required tabindex="9" pattern="[0-9]{6}" title="Enter 6 digit pin number">
+            <input id="pincode" name="pincode" placeholder="Enter Pin Code" [(ngModel)]="model.address.pincode" required tabindex="9" pattern="[0-9]{6}" title="Enter 6 digit pin number">
             <br>
-        <div id = "userType" >
-            <input type="radio" id="customer" name="userType" value="customer" required>
-            <label for="customer">Register as Customer</label><br>
-            <input type="radio" id="restaurant" name="userType" value="restaurant"required>
-            <label for="restaurant">Register as Restaurant</label><br>
-        </div>
+       
         <br>
-        <input class="buttom" name="submit" id="submit" tabindex="9" value="Sign me up!" type="submit">
+        <input class="buttom" name="submit" id="submit" tabindex="9" (click)="register()" value="Sign me up!" type="submit">
 
-        <p>Already have an Account  <a [routerLink]="['../login']" >Go to Login </a></p>
+        <p>Already have an Account  <a [routerLink]="['../login']" class="btn btn-black">Go to Login </a></p>  
+
         </form>
         </div>
     </div>

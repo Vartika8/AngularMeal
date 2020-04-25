@@ -1,0 +1,61 @@
+<app-nav></app-nav>
+
+<section id="home" class="parallax-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+				<h1>Meal On Wheels</h1>
+				<h2>Find Your Favorite Restaurant Here</h2>
+				
+			</div>
+				<br>
+				<br>
+    	
+ </div>
+</div>		
+</section>
+
+<!-- Restaurant-->
+
+<section id="restaurant" class="parallax-section">
+	<div class="container">
+		<div class="row">   
+			<div class="col-md-offset-2 col-md-12 col-sm-12 text-center">
+				<h1 class="heading">Your Favorite Restaurants Here</h1>
+				<hr>
+				<!--Put a loop while fetching the data -->
+				<div  class="card-deck col-md-12 col-sm-12 text-center">
+					 <div class="col-md-4 col-sm-4 wow fadeInUp" *ngFor="let users of restaurant | async" data-wow-delay="0.9s">
+					
+							<div class="card">
+							 <img [src] = "imagePath[0]" class = "card-img-top"/>
+							 <div class="card-body">
+							   <h5 class="card-title">{{users.name}}</h5>
+							   <p class="card-text">{{users.address.baseAddress}}</p>
+							   <p class="card-text">{{users.address.city}}</p>
+							   
+							   <p class="card-text">{{users.address.state}}</p>
+							   
+                              <a class="btn btn-black" (click)="viewFoodList(users.restaurant.id)"> View Foods</a>
+							   <p class="card-text"><small class="text-muted">
+								     
+							   </small></p>
+							 </div>
+						   </div>
+							
+						</div> 
+					
+						
+							
+								
+									
+					</div>
+				</div>
+		</div>
+	</div>
+</section>
+<br>
+<br>
+<br>
+<app-footer></app-footer>
+

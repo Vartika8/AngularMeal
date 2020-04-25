@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Users } from '../users';
+
 
 @Component({
   selector: 'app-nav',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  imagePath = "asserts/images/logo.png";
+  users:Users=JSON.parse(sessionStorage.getItem("username"));
+
+  imagePath = "assets/images/logo.png";
 
   constructor() { }
 

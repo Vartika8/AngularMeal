@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthenticationService } from '../authentication.service';
+import{Users} from '../users';
+import{ AuthenticationService} from '../authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -11,34 +12,54 @@ export class LoginComponent implements OnInit {
 
   imagePath = [
     
-    '/assets/images/image1.jpeg',
-       
+    '/assets/images/cream.jpg',
+    '/assets/images/logo.png'
+
+    
   ];
+  message: string;
 
+  phone:string;
+  password:string;
+  constructor(private router: Router,
+    private loginservice: AuthenticationService ) {
 
-  username = ''
-  password = ''
-  invalidLogin = false
-  errorMessage = 'Invalid Credentials';
-  successMessage: string;
-  loginSuccess = false;
-
-  constructor(private Router: Router,
-    private loginservice: AuthenticationService) { }
+  }
 
   ngOnInit(): void {
   }
+  public checkLogin() {
 
-  checkLogin(){
-    if(this.loginservice.authenticate(this.username, this.password)){
-      this.Router.navigate(['']);
-      this.invalidLogin = false;
-      this.loginSuccess = true;
-      this.successMessage = 'Login Successful';
+    let users={
+      "phone":this.phone,
+      "password":this.password
+    };
+    
+   let resp = this.loginservice.userLogin(users);
+
+    resp.subscribe(data => {
+     
+      if(data!=null){
+      if (data.restaurant == null) {
+        sessionStorage.setItem('username',JSON.stringify(data));
+
+        this.router.navigate(['welcomecustomer']);
+      }
+      else {
+        sessionStorage.setItem('username',JSON.stringify(data));
+        this.router.navigate(['restaurantprofile']);
+
+       }
+    }}
+    );
+
+    if(resp==null)
+    {
+      console.log("Fuck Off");
     }
-    else{
-      this.invalidLogin = true;
-      this.loginSuccess = false;
-    }
+
   }
 }
+
+  
+

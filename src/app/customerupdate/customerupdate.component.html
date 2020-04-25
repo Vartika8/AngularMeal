@@ -1,0 +1,48 @@
+<div class="container h-100">
+    <div class="sidenav">
+        <img class="landing-image "  [src]="imagePath[0]"/>"
+  </div>
+  <div class="main">
+     <div class="col-md-6 col-sm-12">
+        <div  class="form">
+          <div><img class="logo" [src]="imagePath[1]" /></div>
+          <div class="logo-title">Profile Update</div>
+        <form id="updationform" action="saveDealer" method="post" >
+            
+            <br>
+            <br>
+
+        <p class="contact"><label for="name"> Name</label></p>
+        <input id="name" name="users.name" placeholder="Enter Name" [value]="users.name" required tabindex="2" type="text">
+
+        <p class="contact"><label for="phone">Mobile phone</label></p>
+        <input id="phone" name="phone" pattern="[0-9]{10}" title="Enter 10 digit mobile number" placeholder="Enter Phone Number" [(ngModel)]="users.phone" required type="tel">
+        
+        <p class="baseAddress"><label for="baseAddress">Address</label></p>
+        <input id="baseAddress" name="baseAddress" placeholder=" Address" [value]="users.address.baseAddress" required tabindex="7" type="text">
+
+        <p class="contact"><label for="phone">City</label></p>
+        <div class="select-style city" name="city" tabindex="8">  
+            <select class="form-control" id="city" [(ngModel)] ="users.address.city" name = "city" required>  
+              <option  *ngFor="let city of cities" [value]="city" >{{city}}</option>  
+            </select>  
+          </div>
+
+          <p class="contact"><label for="phone">State</label></p>
+        <div class="select-style state" name="state" tabindex="8">  
+            <select class="form-control" id="state" name={{users.address.state}}  required>  
+              <option  *ngFor="let state of states" [value]="state" >{{state}}</option>  
+            </select>  
+          </div>
+            <p class="pincode"><label for="pincode">Pin Code</label></p>
+            <input id="pincode" name="pincode" placeholder="Enter Pin Code" [(ngModel)]="users.address.pincode" required tabindex="9" pattern="[0-9]{6}" title="Enter 6 digit pin number">
+            <br>
+        
+        <br>
+        <input class="buttom" name="submit" (click)= OnClickSubmit() id="submit" tabindex="9" value="Save Changes" type="submit">
+
+        </form>
+        </div>
+    </div>
+    </div>
+</div>

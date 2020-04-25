@@ -1,136 +1,49 @@
-
-<!-- navbar -->
-
-<header>
-    <img src = ""/> Property binding
-    <div calss = "container">
-        <nav>        
-        <a  routerLink="/restuarant" class = "logo">Meal On Wheels</a>
-        
-            <ul>
-              <!--Routing to diff compnts-->
-                <li>
-                  <a routerLink="/restuarant" >Home</a>
-                </li>
-                
-                <li>
-                    <div  class="dropdown">
-                        <button class="dropbtn">UserName</button>
-                        <div class="dropdown-content">
-                          <a heref="#">View Profile</a>
-                          <a href="#">Update Profile</a>
-                          <a >Logout</a> <!--use [routerlink]="['../logout']" -->
-                        </div>
-                      </div>
-                </li>                
-            </ul>
-        </nav>
-    </div>
-</header>
-
-<!-- home -->
-
-<section id="home" class="parallax-section">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-sm-12">
-				<h1>Meal On Wheels</h1>
-				<h2>Find Your Favorite Restaurant Here</h2>
-				
-			</div>
-			<br>
-			<br>	
-        </div>
-    </div>		
-</section>
-
 <!-- cart-->
-
+<app-nav></app-nav>
 <section id="cart" class="parallax-section">
-    
-    <div class="container">
-		
-<div [ngClass]="{bg:!isCart()}">
-    <div *ngIf="!isCart()">
-        <div>
-            <ion-icon class="empty-cart" name="cart"></ion-icon>
-        </div>
-        <h4>Your Cart is empty!</h4>
-        <button class="empty-btn" (click)="gotorestaurants()">{{'Add Items' | translate}}</button>
+
+    <div *ngIf="cartList==null" >
+        
+        <h4>Your Cart is empty!</h4>        
+        <button type="button" class="btn btn-light" >'Add Items' | translate</button>
     </div>
-    
-	<div *ngIf="isCart()">
-	<table>
-        <div class="cart-list" *ngFor="let data of Cart">
-            <!-- item-list -->
-            <div class="cart-item">
-                <!-- item -->
-                <div class="full">
-                    <div class="img">
-                        <!-- col-for item-image and details -->
-                        <tr>
-                            <td>
-                                <!-- item-image -->
-                                <img [src]="imagePath" alt="">
-                            <td>
-                            <tr>
-                                <p class="item-name" text-wrap>{{data.item.title}}</p>
-                                <p class="item-detail" text-wrap>{{"Quantity:" | translate}} {{data.item.itemQunatity}}</p>
-                                <p class="item-detail" text-wrap>{{"Size:" | translate}} {{data?.item?.price?.pname}}</p>
-                                    <p class="item-detail">Price:
-                                        <span class="item-price">
-                                            <strong class="cut"> {{currency?.currencySymbol}}{{data.item.price.value | number:'.2-2'}}</strong>
-                                        </span>
-                                    </p>
-                                
-                                <!-- row-for count item -->
+	<div >
 
-                               
-                                    <!-- row-for count item -->
-                                    <td>
-
-                                        <div class="count">
-                                            <span class="item-count" (click)="remove(data)">
-                                                -
-                                            </span>
-                                            <span class="item-count show-count">
-                                                {{data.item.itemQunatity}}
-                                            </span>
-                                            <span class="item-count" (click)="add(data)">
-                                                +
-                                            </span>
-                                        </div>
-									</td>
-                                
-                                    <td>
-                                        <ion-icon name="trash" (click)="deleteItem(data)"></ion-icon>
-                                    </td>
-                                
-                            </tr>
-                        </tr>
+	    <table class="table table-striped table-dark">
+                
+            <tbody >
+              <tr *ngFor="let cartItem of cartList|async">
+                <!--<td><img [src]="imagePath" alt="itemImage"></td>-->
+                <td><p class="item-name" text-wrap>{{cartItem.food.foodName}}</p></td>
+                <td>
+                    <input type="number" min="1" max="10" (change)="changeQuantity(cartItem)" [(ngModel)]="cartItem.quantity">
+                </td>
+                <td>
+                    <p class="item-detail">Price:
+                    <span class="item-price">
+                        <strong class="cut"><span>&#8377;</span> {{ cartItem.price | number:'.2-2'}}</strong>
+                    </span>
+                    </p>
+                </td>
+                
+                <td>
+                    <button  type="button" class="btn btn-light" (click)="deleteCartItem(cartItem.id)" >Delete</button>
+                </td>
+              </tr>
+            </tbody>
+            <tr></tr>
+            <tr class="price-details">
+                <td class="calculate" col-12>
+                    <div class="cart-total">
+                        <strong>Order Total</strong>
+                        <span class="price"><span>&#8377;</span> {{total | number:'.2-2'}}</span>
                     </div>
-                </div>
-            </div>
-        </div>
-        <tr class="price-details">
-            <td class="calculate" col-12>
-                <div class="cart-total">
-                    <strong>{{"Order Total" | translate}}</strong>
-                    <span class="price"> {{currency?.currencySymbol}} {{GrandTotal | number:'.2-2'}}</span>
-                </div>
-            </td>
-        </tr>
-        <!-- row-bill-details -->
-        <!-- continue button -->
-        <tr>
-            <td>
-                <button  class="continue-btn" (click)="nav()">{{"Continue"| translate}}</button>
-            </td>
-        </tr>
-	</table>
+                </td>
+                <td >
+                    <button  type="button" class="btn btn-light" > Checkout</button>
+                </td>
+            </tr>
+        </table>
     </div>
-    </div>
-</div>
 </section>
-
 <app-footer></app-footer>

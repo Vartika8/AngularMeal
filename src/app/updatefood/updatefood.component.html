@@ -1,0 +1,31 @@
+<app-restnav></app-restnav>
+
+<div class="main">
+    <div class="col-md-6 col-sm-12">
+     <h3>{{message}}</h3>
+
+        <div>
+           <form id="updationform" >
+               
+               <br>
+               <br>
+   
+           <p class="addfood"><label for="foodname">Item Name</label></p>
+           <input id="foodname" name="foodName" [(ngModel)]="food.foodName" placeholder="Enter Item name"  required tabindex="2" type="text">
+            
+           <p class="addfood"><label for="fooddes">Description</label></p>
+           <input id="fooddes" name="description"  [(ngModel)]="food.description" placeholder="Enter Item Description"  required tabindex="2" type="text">
+            
+           <p class="addfood"><label for="foodprice">Price</label></p>
+           <input id="foodprice" name="price"  placeholder="Enter Item price"  [(ngModel)]="food.price"required tabindex="2" type="text">
+   
+           <br>
+           <input class="buttom" (click)="updateFood()" name="submit" id="submit" tabindex="9" value="Add Item" type="submit">
+   
+           </form>
+        </div>
+        
+    </div>
+</div>
+
+<app-footer></app-footer>

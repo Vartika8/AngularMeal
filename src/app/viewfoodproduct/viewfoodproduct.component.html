@@ -1,0 +1,40 @@
+<app-restnav></app-restnav>
+
+<br>
+<br>
+<br>
+<div class="container">
+    <h2>Food List</h2>   
+      
+    <table class="table table-bordered">
+   
+      <thead>
+        <tr>
+          <th>Food Image</th>
+          <th>Food Name</th>
+          <th>Cusine</th>
+          <th>Price</th>
+          <th colspan="2">Action</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let food of foods | async">
+            <td><img src="" alt="image"/></td>
+            <td>{{food.foodName}}</td>
+            <td>{{food.description}}</td>
+            <td>{{food.price}}</td>
+            <td><a class="btn btn-primary" (click)="updatefood(food.id)"> Update</a></td>
+            <td><a class="btn btn-danger" (click)="deletefood(food.id)" >Delete</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+  <app-footer></app-footer>

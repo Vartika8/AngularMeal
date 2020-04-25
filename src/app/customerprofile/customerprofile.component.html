@@ -1,0 +1,63 @@
+<app-nav></app-nav>
+<div class="image">
+<div class="continer">
+    <h1>Customer Profile</h1>
+    
+    <hr/>
+    <div *ngIf="users">
+
+        <table class="center">
+        <tr>
+            <td>
+                <div>
+                 <label><b> Name: </b></label> {{users.name}} 
+                </div>
+            </td>
+        </tr>
+          <tr>
+            <td>
+                <div>
+                 <label><b>Registered Mobile Number: </b></label> {{users.phone}} 
+                </div>
+            </td>
+        </tr>    <tr>
+            <td>
+                <div>
+                <label><b>Address: </b></label>
+                </div>
+            </td>
+            <tr>
+                <td>
+                     <label><b>Primamry Address: </b></label> {{users.address.baseAddress}} 
+                </td>
+            </tr>
+            <tr>
+                <td>
+                     <label><b>City: </b></label> {{users.address.city}} 
+                </td>
+            </tr>
+            <tr>
+                <td>
+                     <label><b>State: </b></label> {{users.address.state}} 
+                </td>
+            </tr>
+            <tr>
+                <td>
+                     <label><b>Pincode: </b></label> {{users.address.pincode}} 
+                </td>
+        
+        </tr>
+    
+        <br>
+        <tr><td><button [routerLink]="['../customerupdate']" class="btn btn-black">Update Profile</button></td>
+        </tr>
+    </table>
+    </div>
+    
+    </div>
+
+    <br>
+    <br>
+    <br>
+    </div>
+    <app-footer></app-footer>

@@ -1,8 +1,8 @@
 <header>
-    <img [src] = "imagePath"/> <!--Property binding-->
+  
     <div calss = "container">
         <nav>        
-        <a  routerLink="/restuarant" class = "logo">Meal On Wheels</a>
+          <img [src] = "imagePath"/> <!--Property binding--> <a  routerLink="/restuarant" class = "logo">Meal On Wheels</a>
         
             <ul>
               <!--Routing to diff compnts-->
@@ -14,10 +14,10 @@
                 </li>
                 <li>
                     <div  class="dropdown">
-                        <button class="dropbtn">UserName</button>
+                        <button class="dropbtn">{{users.name}}</button>
                         <div class="dropdown-content">
-                          <a routerLink="/userdetails" >View Profile</a>
-                          <a routerLink="/updateprofile" >Update Profile</a>
+                          <a routerLink="/customerprofile" >View Profile</a>
+                          <a routerLink="/test" >Test</a>
                           <a routerLink="/login">Logout</a>
                         </div>
                       </div>

@@ -1,6 +1,13 @@
 body {
     font-family: "Lato", sans-serif;
 }
+.brand {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2em;
+}
 
 .main-head{
     height: 150px;
@@ -10,11 +17,23 @@ body {
 
 .sidenav {
     height: 100%;
-    /* background-color: #000; */
     overflow-x: hidden;
     padding-top: 20px;
 }
 
+.logo {
+    width: 90%;
+    text-align: left;
+}
+
+
+.logo-title {
+    font-size: 2.2em;
+    color: #000000;
+    font-weight: bolder;
+    letter-spacing: 2.5px;
+    ;
+}
 
 .main {
     padding: 0px 10px;
@@ -41,14 +60,17 @@ body {
 
     .sidenav{
         width: 40%;
+        height: 100%;
         position: fixed;
+        overflow: hidden;
+        padding-top: 20px;;
         z-index: 1;
         top: 0;
         left: 0;
     }
 
     .login-form{
-        margin-top: 80%;
+        margin-top: 30%;
     }
 
     .register-form{
@@ -72,7 +94,7 @@ body {
 }
 
 .btn-black:hover{
-	background-color: #FFAE42;
+	background-color: #800000;
 	color: #fff;
 	 }
 
@@ -80,9 +102,8 @@ body {
 	margin-top: 30px;
 }
 
-.landing-image{
-    /* display: none; */
+.landing-image{ 
     width: 100%;
     margin: -20px -5px 0 5px;
-    height: 100vh;
+    height: 100%;
 }

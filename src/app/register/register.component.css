@@ -11,6 +11,20 @@ body {
    
 }
 
+
+.logo {
+    width: 90%;
+    text-align: left;
+}
+
+
+.logo-title {
+    font-size: 2.2em;
+    color: #000000;
+    font-weight: bolder;
+    letter-spacing: 2.5px;
+    ;
+}
 .sidenav {
     height: 100%;
     background-color: #000;
@@ -18,6 +32,13 @@ body {
     padding-top: 20px;
 }
 
+.brand {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2em;
+}
 
 .main {
     padding: 0px 10px;
@@ -34,7 +55,10 @@ body {
 
     .sidenav{
         width: 40%;
+        height: 100%;
         position: fixed;
+        overflow: hidden;
+        padding-top: 20px;;
         z-index: 1;
         top: 0;
         left: 0;
@@ -131,6 +155,19 @@ text-align:center
   width:410px;
   }
 
+  
+.btn-black{
+    background-color: #010203 ;
+    color: #fff;
+    
+    
+}
+
+.btn-black:hover{
+	background-color: #800000;
+	color: #fff;
+	 }
+
 .form input.buttom{
 	background: #010203;
 	 display: inline-block; 
@@ -154,7 +191,7 @@ text-align:center
 	      }
 
 .form input.buttom:hover{
-	background-color: #FFAE42;
+	background-color: #800000;
      }
      
      .landing-image{

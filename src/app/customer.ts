@@ -1,17 +1,7 @@
-export class Customer {
+import { Users } from './users';
 
-    constructor(
-        // public id: string,
-        public fname: string,
-        public lname: string,
-        public email: string,
-        public phone: string,
-        public password : string,
-        public cnfPassword: string,
-        public address: string,
-        public city : string,
-        public pin: string,
-        
-        ) { }
+export class Customer {
+id:number;
+users:Users;
 
 }

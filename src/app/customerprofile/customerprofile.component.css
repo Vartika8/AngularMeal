@@ -1,0 +1,33 @@
+body{
+    text-align: center;
+}
+
+h1{
+    font-size: 40px;
+    text-align: center;
+}
+table.center{
+    text-align: left;
+    margin-right: auto;
+    margin-left: auto;
+    align-content: center;
+}
+.image{
+    height:auto; 
+    background-size:cover;
+    width:auto;
+    background-image:url('D:\angular\OnlineFood\angularMeal\src\assets\images\staw.jpg');
+    background-position:50% 50%;
+    padding-bottom: 2%; 
+  }
+
+  .btn-black{
+    background-color: #010203 ;
+    color: #fff;
+}
+
+.btn-black:hover{
+	background-color: #800000;
+	color: #fff;
+	 }
+  

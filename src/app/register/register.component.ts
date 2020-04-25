@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import{ Customer } from '../customer';
+import{ Users } from '../users';
+import { RegistrationService } from '../registration.service';
+
 
 
 
@@ -11,20 +13,29 @@ import{ Customer } from '../customer';
 export class RegisterComponent implements OnInit {
 
   imagePath = [
-    '/assets/images/image1.jpeg',
+    '/assets/images/ice.jfif',
+    '/assets/images/logo.png'
   ];
 
-  cities = ['Ahmedabad, Bangalore, Chennai, Delhi, Hyderabad, Kolkata, Mumbai, Pune'];
-
-  model = new Customer('','','','','','','','','');
+ 
+  model = new Users();
+  
 
   submitted = false;
 
   onSubmit() { this.submitted = true; }
 
-  constructor() { }
+  constructor(private restaurantService:RegistrationService) { }
 
   ngOnInit(): void {
   }
+  public register(){
+   this.restaurantService.restaurantRegistration(this.model);
 
+  }
+  OnRoleChanged(value)
+  {
+    console.log(value);
+    this.model.role=value;
+  }
 }

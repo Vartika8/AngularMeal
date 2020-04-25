@@ -14,42 +14,28 @@
                           <button class="nav-button sign" [routerLink]="['../register']" >Sign up</button>
                       </div>
                   </div>
+                  <div class="title">
+                    <div id="typewriter" class="changing"></div>
+                    <div class="sub-title">Find awesome restaurants near you.</div>
+                  </div>
+
                   
           </div>
           <div class="title">
-            <div id="typewriter" class="changing"></div>
-            <div class="sub-title">Find awesome restaurants near you.</div>
+           
           </div>
-          <div class="search"><!-- write code for getting the city selected-->
-            <select
-              id="selection"
-              class="search-bar"
-              type="text"
-              placeholder="Enter your delivery location"
-            >
-              <option value="" selected style="display: none"
-                >Select your location</option
-              >
-              <option value="11">Ahmedabad</option>
-              <option value="3">Bangalore</option>
-              <option value="7">Chennai</option>
-              <option value="1">Delhi</option>
-              <option value="6">Hyderabad</option>
-              <option value="2">Kolkata</option>
-              <option value="3">Mumbai</option>
-              <option value="5">Pune</option>
-            </select>
-            <a id="search" href="#"
-              ><button
-                disabled
-                id="search-button"
-                class="search-bar search-submit"
-                type="submit"
-              >
-                Search
-              </button></a>
+          <div class="blockquote-wrapper">
+            <div class="blockquote">
+              <h1>
+               People Who  <span style="color:black">Love to Eat</span> are always the <span style="color:black">Best People</span>
+               </h1>
+            </div>
+          </div>
+          
+         
+            
   
-          </div>
+          
           <div class=" cities ">
             <div class="cities-title">CITIES SERVED IN INDIA</div>
             <div class="cities-sub-title">
@@ -81,22 +67,7 @@
           </div>
         </div>
       </div>
-      <div class="mobile">
-        <div class="mob-1">
-          <img class="mobile-image" [src]="imagePath[4]" />
-        </div>
-        <div class="mob-2">
-          <div class="changing">Restaurants in your pocket</div>
-          <div class="sub-title">
-            Discover new restaurants near you on the go, with the all-new Foodcubo
-            app.
-          </div>
-          <div class="stores">
-            <img class="store-image" onClick="alertFunction()" [src]="imagePath[5]" />
-            
-            <img class="store-image" [src]="imagePath[6]" onClick="alertFunction()"/>
-          </div>
-        </div>
-      </div>
+    <br>
+    
 
       <app-footer></app-footer>
