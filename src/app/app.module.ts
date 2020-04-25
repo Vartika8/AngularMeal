@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
+import { CartComponent } from './cart/cart.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { NavComponent } from './nav/nav.component';
@@ -22,7 +23,6 @@ import { ViewfoodproductComponent } from './viewfoodproduct/viewfoodproduct.comp
 import { UpdatefoodComponent } from './updatefood/updatefood.component';
 import { AddfoodComponent } from './addfood/addfood.component';
 import { MenulistComponent } from './menulist/menulist.component';
-import { CartComponent } from './cart/cart.component';
 import { OrderComponent } from './order/order.component';
 import { VieworderComponent } from './vieworder/vieworder.component';
 
@@ -31,6 +31,7 @@ import { VieworderComponent } from './vieworder/vieworder.component';
     AppComponent,
     LoginComponent,
     LogoutComponent,
+    CartComponent,
     HomeComponent,
     RegisterComponent,
     NavComponent,

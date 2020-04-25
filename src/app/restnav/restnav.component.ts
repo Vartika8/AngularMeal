@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Users } from '../users';
+
 
 @Component({
   selector: 'app-restnav',
@@ -8,13 +10,17 @@ import { Users } from '../users';
 })
 export class RestnavComponent implements OnInit {
 
-  users:Users=JSON.parse(sessionStorage.getItem("username"));
+
+  users: Users = JSON.parse(sessionStorage.getItem("username"));
 
   imagePath = "assets/images/logo.png";
-  
+
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
 }
+
+

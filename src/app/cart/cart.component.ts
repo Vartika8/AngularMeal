@@ -20,12 +20,6 @@ total:number;
   ngOnInit(): void {
     this.total=0;
     this.cartListing();
-this.cartList.subscribe(data=>{
-  for(var i=0;i<data.length;i++)
-  {
-    this.total+=data[i].price;
-  }
-  });
 
   }
   changeQuantity(cartItem)
@@ -53,7 +47,13 @@ this.cartList.subscribe(data=>{
     this.cartListing();
   }
 public cartListing() 
-{
+{   this.total=0;
   this.cartList=this.cartService.viewCart();
+  this.cartList.subscribe(data=>{
+    for(var i=0;i<data.length;i++)
+    {
+      this.total+=data[i].price;
+    }
+    });
 } 
 }

@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Food } from '../food';
 import { FoodService } from '../food.service';
 
+
 @Component({
   selector: 'app-updatefood',
   templateUrl: './updatefood.component.html',
@@ -35,4 +36,5 @@ message:any;
       this.message="Un-Successfully Update";
     }
   }
+
 }

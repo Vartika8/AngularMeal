@@ -15,4 +15,5 @@ export class RestaurantprofileComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
 }

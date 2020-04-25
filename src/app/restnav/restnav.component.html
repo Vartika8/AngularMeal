@@ -1,9 +1,14 @@
 <header>
+
  
     <div calss = "container">
       
         <nav>        
-          <img [src] = "imagePath" /> <!--Property binding--><a  routerLink="/restuarant" class = "logo">Meal On Wheels</a>
+         
+    <img [src] = "imagePath"/> <!--Property binding-->
+    <div calss = "container">
+        <nav>        
+        <a  routerLink="/restuarant" class = "logo">Meal On Wheels</a>
         
             <ul>
               <!--Routing to diff compnts-->
@@ -15,6 +20,7 @@
                 </li>
                 <li>
                     <a routerLink="/viewfoodproduct">View Products</a>
+                  
                 </li>
 
                 <li>
@@ -29,5 +35,7 @@
                 </li>                
             </ul>
         </nav>
+    </div>
+    </nav>
     </div>
 </header>

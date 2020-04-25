@@ -8,6 +8,7 @@ header {
       pointer-events: none;
       font-size: 25px;
       padding : .8em;
+
     }
     
     nav {
@@ -48,6 +49,7 @@ header {
 
         height:50px;
         width: 50px;
+
     }
 
     /* Dropdown Button */

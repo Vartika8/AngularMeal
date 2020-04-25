@@ -29,20 +29,8 @@
                         <textarea class="form-control" id="message2" [(ngModel)]="food.description" placeholder="Enter Description" name="message2" required="" rows="4"></textarea>
                       </div>
                     </div>
-                    <div>
-                      <input type="file" (change)="onFileChanged($event)">
-                  
-                      <img [src]="imgURL" height="200" *ngIf="imgURL">
-                  </div>
-                  
-                  <input type="button" (click)="onUpload()" value="upload">
-                  
-                  <hr />
-                  
-                  Received Image:
-                  
-                  {{receivedImageData['pic'] | json}}
-                  <img [src]="convertedImage" >
+                   
+                 
                     <input class="btn btn-primary" (click)="addfood()" type="button" value="Submit">
                     <div class="col-md-6 col-sm-12">
                         <h3>{{message}}</h3>
