@@ -53,11 +53,7 @@ export class LoginComponent implements OnInit {
     }}
     );
 
-    if(resp==null)
-    {
-      console.log("Fuck Off");
-    }
-
+  
   }
 }
 

@@ -34,4 +34,13 @@ export class CartService {
     cartList.subscribe(data=>{console.log(data);});
     return cartList;
   }
+
+  public updateCart(cartItem)
+  {
+    console.log("service calling");
+    console.log(cartItem);
+    let sess=JSON.parse(sessionStorage.getItem("username"));
+    let status=this.http.put(`${this.baseUrl}${"/"}${sess.customer.id}`,cartItem);
+    status.subscribe(data=>console.log(data));
+  }
 }

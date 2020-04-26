@@ -1,33 +1,49 @@
 <app-restnav></app-restnav>
-
-<div class="main">
-    <div class="col-md-6 col-sm-12">
-     <h3>{{message}}</h3>
-
-        <div>
-           <form id="updationform" >
-
-               
-               <br>
-               <br>
-   
-           <p class="addfood"><label for="foodname">Item Name</label></p>
-           <input id="foodname" name="foodName" [(ngModel)]="food.foodName" placeholder="Enter Item name"  required tabindex="2" type="text">
+<body>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <hr class="my-4">
+      
+        <div class="card card-outline-secondary">
+          <div class="card-header">
+            <h3 class="alignment">Update Food Items</h3>
+          </div>
+          <div class="card-body">
+            <form autocomplete="off" class="form" role="form">
+              <fieldset>
+                    <div class="form-group row">
+                      <label class="col-lg-3 col-form-label form-control-label">Food Name</label>
+                      <div class="col-lg-9">
+                        <input class="form-control" [(ngModel)]="food.foodName" placeholder="Enter Item name" name="foodName" type="text" value="">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-lg-3 col-form-label form-control-label">Food Price</label>
+                      <div class="col-lg-9">
+                        <input class="form-control" [(ngModel)]="food.price" name="price" placeholder="Enter Price" type="url" value="">
+                      </div>
+                    </div>
+                    <label class="mb-0" for="message2">Food Description</label>
+                    <div class="row mb-1">
+                      <div class="col-lg-12">
+                        <textarea class="form-control" id="message2" [(ngModel)]="food.description" placeholder="Enter Description" name="message2" required="" rows="4"></textarea>
+                      </div>
+                    </div>
+                   
+                 
+                    <input class="btn btn-black" (click)="updateFood()" type="button" value="Submit">
+                    <div class="col-md-6 col-sm-12">
+                        <h3>{{message}}</h3>
+                        </div>
+  
+              </fieldset>
+            </form>
             
-           <p class="addfood"><label for="fooddes">Description</label></p>
-           <input id="fooddes" name="description"  [(ngModel)]="food.description" placeholder="Enter Item Description"  required tabindex="2" type="text">
-            
-           <p class="addfood"><label for="foodprice">Price</label></p>
-           <input id="foodprice" name="price"  placeholder="Enter Item price"  [(ngModel)]="food.price"required tabindex="2" type="text">
-   
-           <br>
-           <input class="buttom" (click)="updateFood()" name="submit" id="submit" tabindex="9" value="Add Item" type="submit">
-   
-           </form>
+          </div>
         </div>
-        
     </div>
-</div>
-
+    </div>
+    <hr class="my-4">
+    </body>   
 
 <app-footer></app-footer>

@@ -1,7 +1,7 @@
 <app-nav></app-nav>
 <div class="jumbotron text-center">
-    <h1 class="display-3">Thank You!</h1>
-    <p class="lead"><strong>Your Order Order Id: order.orderId Has Been Placed</strong> </p>
+    
+    
 
     <hr>
     
@@ -12,31 +12,37 @@
         <thead>
           <tr>
             <th>Order Id</th>
-            <th>Order Date </th>
-            <th>Order Price</th>
+            <th>Order Date & Time </th>
+            <th>Amount</th>
             
             <th>
-                <table>
-                    <tr>
-                        <th>Restaurant Name</th>
+                
+                    <tr> 
+                        
                         <th>Item Name</th>
-                        <th>Item price</th>
-                        <th>Item Quantity</th>
-                        <th>Total Price</th>
+                        <th>Item price(Per unit)</th>
+                      
                     </tr>
-                </table>
+            
 
             </th>
-           <th colspan="2">Action</th>
             
           </tr>
         </thead>
         <tbody>
-          <tr >
-              <td><img src="" alt="image"/></td>
-              <td></td>
-              <td></td>
-              <td></td>
+          <tr *ngFor="let order of orderList|async">
+              <td>Order000123{{order.id}}</td>
+              <td>{{order.orderDate}}</td>
+              <td>{{order.totalPrice}}</td>
+              <td>
+                <tr *ngFor="let foodItems of order.food" class="btn-success">
+
+              
+                  <td>{{foodItems.foodName}}</td>
+                  <td>{{foodItems.price}}</td>
+
+                </tr>
+              </td>
               
           </tr>
         </tbody>

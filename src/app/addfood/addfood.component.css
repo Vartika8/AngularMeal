@@ -26,3 +26,13 @@ div{
     height: 100%;
 }
 
+
+.btn-black{
+    background-color: #010203 ;
+    color: #fff;
+}
+
+.btn-black:hover{
+	background-color: #800000;
+	color: #fff;
+	 }

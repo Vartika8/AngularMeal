@@ -30,7 +30,8 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
   public register(){
-   this.restaurantService.restaurantRegistration(this.model);
+    console.log(this.model);
+   this.restaurantService.userRegistration(this.model);
 
   }
   OnRoleChanged(value)

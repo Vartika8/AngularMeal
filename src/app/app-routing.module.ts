@@ -16,6 +16,7 @@ import { UpdatefoodComponent } from './updatefood/updatefood.component';
 import { AddfoodComponent } from './addfood/addfood.component';
 import { MenulistComponent } from './menulist/menulist.component';
 import { CartComponent } from './cart/cart.component';
+import{ VieworderComponent} from'./vieworder/vieworder.component';
 
 
 const routes: Routes = [ 
@@ -33,7 +34,7 @@ const routes: Routes = [
   {path:'addfood',component:AddfoodComponent},
   {path:'menulist/:id',component:MenulistComponent},
   {path:'cart',component:CartComponent},
-  {path:'vieworder',component:ViewfoodproductComponent}
+  {path:'vieworder',component:VieworderComponent}
 ];
 
 @NgModule({

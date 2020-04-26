@@ -112,6 +112,10 @@ letter-spacing: 8px;
 font-style: normal;
 padding-top: 10px;
 }
+h1{
+  color: #800000;
+  text-align: center;
+}
 #home .btn {
 background: transparent;
 border-radius: 0;
@@ -157,4 +161,16 @@ height:63px;
   }
 
  
+
+  .btn-black{
+    background-color: #010203 ;
+    color: #fff;
+}
+
+.btn-black:hover{
+	background-color: #800000;
+	color: #fff;
+	 }
+
+
 

@@ -11,6 +11,7 @@ export class Users {
     address: Address;
     role: String;
     constructor(){
+        this.address=new Address();
         // this.customer=new Customer();
         // this.restaurant=new Restaurant();
        

@@ -1,5 +1,5 @@
 <app-restnav></app-restnav>
-
+<body>
 <br>
 <br>
 <br>
@@ -20,7 +20,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let food of foods | async">
-            <td><img src="" alt="image"/></td>
+            
             <td>{{food.foodName}}</td>
             <td>{{food.description}}</td>
             <td>{{food.price}}</td>
@@ -35,6 +35,6 @@
   <br>
   <br>
   <br>
-
+</body>
 
   <app-footer></app-footer>

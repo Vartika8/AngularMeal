@@ -3,11 +3,13 @@
 <br>
 <br>
 <section id="cart" class="parallax-section">
+    <h1>Your Cart </h1>
+    <br>
 
     <div *ngIf="cartList==null" >
         
         <h4>Your Cart is empty!</h4>        
-        <button type="button" class="btn btn-light" >'Add Items' | translate</button>
+        <button type="button" class="btn btn-black" >'Add Items' | translate</button>
     </div>
 	<div >
 
@@ -18,7 +20,7 @@
                 <!--<td><img [src]="imagePath" alt="itemImage"></td>-->
                 <td><p class="item-name" text-wrap>{{cartItem.food.foodName}}</p></td>
                 <td>
-                    <input type="number" min="1" max="10" (change)="changeQuantity(cartItem)" [(ngModel)]="cartItem.quantity">
+                    <input type="number" min="1" max="100" (change)="changeQuantity(cartItem)" [(ngModel)]="cartItem.quantity">
                 </td>
                 <td>
                     <p class="item-detail">Price:
@@ -29,7 +31,7 @@
                 </td>
                 
                 <td>
-                    <button  type="button" class="btn btn-light" (click)="deleteCartItem(cartItem.id)" >Delete</button>
+                    <button  type="button" class="btn btn-black" (click)="deleteCartItem(cartItem.id)" >Delete</button>
                 </td>
               </tr>
             </tbody>
@@ -42,7 +44,7 @@
                     </div>
                 </td>
                 <td >
-                    <button  type="button" class="btn btn-light" > Checkout</button>
+                    <button  type="button" class="btn btn-black" (click)="vieworder()"> Checkout</button>
 
                 </td>
             </tr>

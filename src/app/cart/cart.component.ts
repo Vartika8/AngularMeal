@@ -27,19 +27,8 @@ total:number;
      let quantity=cartItem.quantity;
      cartItem.price=cartItem.food.price*quantity;
      this.total=0;
-    this.cartList.subscribe(data=>{4
-      console.log(data);
-      for(var i=0;i<data.length;i++)
-      {
-        if(cartItem.id==data[i].id)
-        {
-          data[i].quantity=cartItem.quantity;
-          data[i].price=data[i].food.price* data[i].quantity;
-        }
-       
-        this.total+=data[i].price;
-      }
-      });
+      this.updateCart(cartItem);
+      this.cartListing();
   }
   deleteCartItem(cartId)
   {
@@ -56,4 +45,13 @@ public cartListing()
     }
     });
 } 
+public updateCart(cartItem){
+  console.log(cartItem);
+ this.cartService.updateCart(cartItem);
+}
+public vieworder()
+{
+  this.router.navigate(['vieworder']);
+}
+
 }
