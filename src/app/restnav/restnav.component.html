@@ -8,16 +8,14 @@
     <img [src] = "imagePath"/> <!--Property binding-->
     <div calss = "container">
         <nav>        
-        <a  routerLink="/restuarant" class = "logo">Meal On Wheels</a>
+        <a  routerLink="/restuarant" class = "logo">Meals On Wheels</a>
         
             <ul>
               <!--Routing to diff compnts-->
                 <li>
                   <a routerLink="/addfood" >Add Item</a>
                 </li>
-                <li>
-                    <a routerLink="/cart">View Orders</a>
-                </li>
+               
                 <li>
                     <a routerLink="/viewfoodproduct">View Products</a>
                   
@@ -28,7 +26,6 @@
                         <button class="dropbtn">{{users.name}}</button>
                         <div class="dropdown-content">
                           <a routerLink="/restaurantprofile" >View Profile</a>
-                          <a routerLink="/updaterestaurantprofile" >Update Profile</a>
                           <a routerLink="/">Logout</a>
                         </div>
                       </div>

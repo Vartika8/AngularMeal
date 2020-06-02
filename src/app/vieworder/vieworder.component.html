@@ -1,12 +1,12 @@
 <app-nav></app-nav>
 <div class="jumbotron text-center">
-    
+    <h1>Your Order Summary</h1>
     
 
     <hr>
     
     <p class="lead">
-      <a class="btn btn-primary btn-sm" routerLink="/restaurant" role="button">Continue to homepage</a>
+      
       <table class="table table-bordered">
    
         <thead>
@@ -33,13 +33,13 @@
           <tr *ngFor="let order of orderList|async">
               <td>Order000123{{order.id}}</td>
               <td>{{order.orderDate}}</td>
-              <td>{{order.totalPrice}}</td>
+              <td><span>&#8377;</span>{{order.totalPrice}}</td>
               <td>
                 <tr *ngFor="let foodItems of order.food" class="btn-success">
 
               
                   <td>{{foodItems.foodName}}</td>
-                  <td>{{foodItems.price}}</td>
+                  <td><span>&#8377;</span>{{foodItems.price}}</td>
 
                 </tr>
               </td>

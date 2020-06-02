@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import{ Users } from '../users';
+import { Users } from '../users';
 import { RegistrationService } from '../registration.service';
+import { Router } from '@angular/router';
 
 
 
@@ -17,26 +18,26 @@ export class RegisterComponent implements OnInit {
     '/assets/images/logo.png'
   ];
 
- 
+
   model = new Users();
-  
+
 
   submitted = false;
 
   onSubmit() { this.submitted = true; }
 
-  constructor(private restaurantService:RegistrationService) { }
+  constructor(private router: Router, private restaurantService: RegistrationService) { }
 
   ngOnInit(): void {
   }
-  public register(){
+  public register() {
     console.log(this.model);
-   this.restaurantService.userRegistration(this.model);
+    this.restaurantService.userRegistration(this.model);
+    this.router.navigate(['login']);
 
   }
-  OnRoleChanged(value)
-  {
+  OnRoleChanged(value) {
     console.log(value);
-    this.model.role=value;
+    this.model.role = value;
   }
 }

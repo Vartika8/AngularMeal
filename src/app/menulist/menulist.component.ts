@@ -10,7 +10,7 @@ import { CartService } from '../cart.service';
 })
 export class MenulistComponent implements OnInit {
   imagePath = [
-    '/assets/images/logo.png'
+    '/assets/images/food.PNG'
   ]
   foods: any;
   message:any;
@@ -21,7 +21,7 @@ statusCheck:any;
 
   ngOnInit(): void {   this.id = this.route.snapshot.params['id'];
 
-    this.reloadData();
+    this.reloadData(); 
   }
   reloadData()
   {

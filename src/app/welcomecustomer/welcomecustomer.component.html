@@ -4,8 +4,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 col-sm-12">
-				<h1>Meal On Wheels</h1>
-				<h2>Find Your Favorite Restaurant Here</h2>
+				<!-- <h1>Meal On Wheels</h1>
+				<h2>Find Your Favorite Restaurant Here</h2> -->
 				
 			</div>
 				<br>
@@ -21,16 +21,20 @@
 	<div class="container">
 		<div class="row">   
 			<div class="col-md-offset-2 col-md-12 col-sm-12 text-center">
+				<br>
 				<h1 class="heading">Your Favorite Restaurants Here</h1>
 				<hr>
 				<!--Put a loop while fetching the data -->
 				<div  class="card-deck col-md-12 col-sm-12 text-center">
 					 <div class="col-md-4 col-sm-4 wow fadeInUp" *ngFor="let users of restaurant | async" data-wow-delay="0.9s">
 					
-							<div class="card">
-							 <img [src] = "imagePath[0]" class = "card-img-top"/>
+							<div class="card" style="margin-bottom: 10px;">
+							<div>
+							 <img [src] = "imagePath[0]" style="height:100px ;  width:100px" class = "card-img-top"/>
+							 <h5 class="card-title right">{{users.name}}</h5>
+							</div>
 							 <div class="card-body">
-							   <h5 class="card-title">{{users.name}}</h5>
+							   
 							   <p class="card-text">{{users.address.baseAddress}}</p>
 							   <p class="card-text">{{users.address.city}}</p>
 							   

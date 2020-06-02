@@ -112,6 +112,7 @@ color: white;
 background: url('/assets/images/gallery-img4.jpg') 50% 0 repeat-y fixed;
 -webkit-background-size: cover;
 background-size: cover;
+z-index: -1;
 background-position: center;
 color: #ffffff;
 display: -webkit-box;
@@ -125,6 +126,14 @@ display: flex;
 height: 60vh;
 text-align: center;
 }
+
+.right{
+    float:left;
+    font-weight: bolder;
+    margin-top: 50px;
+    margin-left: 24px;
+}
+
 #home h1 {
 font-size: 20px;
 letter-spacing: 8px;
@@ -185,8 +194,8 @@ height:63px;
 }
 
 #postcustlogin .card img{
-    height: 250px;
-    width :240px;
+    height: 150px;
+    width :140px;
     /* border:1px solid red; */
     margin: 2px 3px;
 }

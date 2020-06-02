@@ -1,4 +1,4 @@
-<!-- cart-->
+<!-- 
 <app-nav></app-nav>
 <br>
 <br>
@@ -17,7 +17,7 @@
                 
             <tbody >
               <tr *ngFor="let cartItem of cartList|async">
-                <!--<td><img [src]="imagePath" alt="itemImage"></td>-->
+               
                 <td><p class="item-name" text-wrap>{{cartItem.food.foodName}}</p></td>
                 <td>
                     <input type="number" min="1" max="100" (change)="changeQuantity(cartItem)" [(ngModel)]="cartItem.quantity">
@@ -53,4 +53,80 @@
 </section>
 
 <app-footer></app-footer>
+ -->
 
+
+
+
+
+
+
+
+
+
+
+
+ <app-nav></app-nav>
+<div class="bg">
+    <div class="setting">
+ <div class="container">
+<br>
+
+<h1><strong>Food Cart</strong></h1>
+<hr>
+ <br>
+ <br>
+ <div *ngIf="cartList==null" >
+        
+    <h4>Your Cart is empty!</h4>        
+    <button type="button" class="btn btn-black" >'Add Items' | translate</button>
+</div>
+<div class="shopping-cart" >
+ 
+  <div class="column-labels">
+    
+    <label class="product-details">Product</label>
+    <!-- <label class="product-price">Price</label> -->
+    <label class="product-quantity">Quantity</label>
+    <label class="product-removal">Remove</label>
+    <label class="product-line-price">Price</label>
+  </div>
+ 
+  <div class="product" *ngFor="let cartItem of cartList|async">
+    <!-- <div class="product-image">
+      <img src="">
+    </div> -->
+    <div class="product-details">
+      <div class="product-title">{{cartItem.food.foodName}}</div>
+      <!-- <p class="product-description"> It has a lightweight, breathable mesh upper with forefoot cables for a locked-down fit.</p> -->
+    </div>
+    <!-- <div class="product-price"><span>&#8377;</span> {{ cartItem.price | number:'.2-2'}}</div> -->
+    <div class="product-quantity">
+      <input type="number" value="2" min="1"  (change)="changeQuantity(cartItem)" [(ngModel)]="cartItem.quantity">
+    </div>
+    <div class="product-removal">
+      <button class="remove-product" (click)="deleteCartItem(cartItem.id)">
+        Remove
+      </button>
+    </div>
+    <div class="product-line-price"><span>&#8377;</span> {{ cartItem.price | number:'.2-2'}}</div>
+  </div>
+ 
+ 
+ 
+  <div class="totals">
+    <div class="totals-item">
+      <label>Total</label>
+      <div class="totals-value" id="cart-subtotal"><span>&#8377;</span> {{total | number:'.2-2'}}</div>
+    </div>
+    
+   
+   
+  </div>
+       
+      <button class="checkout" (click)="vieworder()">Checkout</button>
+ 
+</div>
+</div>
+</div>
+</div>

@@ -1,58 +1,69 @@
 <div class="container h-100">
     <div class="sidenav">
         <img class="landing-image " [src]="imagePath[0]" />"
-  </div>
-  <div class="main">
-     <div class="col-md-6 col-sm-12">
-        <div  class="form">
-            <div class="brand">
-                <div><img class="logo" [src]="imagePath[1]" /></div>
-                <div class="logo-title">User Registeration</div>
-              </div>
-            <form id="registrationform" action="saveDealer" method="post" modelAttribute="dealer">
-            
-            <br>
-            <br>
-            <div id = "userType"  >
-                <input type="radio"  [checked]="model.role === 'Customer'" (change)="OnRoleChanged('Customer')" id="customer" name="userType" value="customer" required>
-                <label for="customer">Register as Customer</label> &nbsp; &nbsp; &nbsp;
-                <input type="radio" id="restaurant" [checked]="model.role === 'Restaurant'" (change)="OnRoleChanged('Restaurant')" name="userType" value="restaurant"required>
-                <label for="restaurant">Register as Restaurant</label><br>
+    </div>
+    <div class="main">
+        <div class="col-md-6 col-sm-12">
+            <div class="form">
+                <div class="brand">
+                    <div><img class="logo" [src]="imagePath[1]" /></div>
+                    <div class="logo-title">Registeration</div>
+                </div>
+                <form id="registrationform" action="saveDealer" method="post" modelAttribute="dealer">
+
+                    <br>
+                    <br>
+                    <div id="userType">
+                        <input type="radio" [checked]="model.role === 'Customer'" (change)="OnRoleChanged('Customer')"
+                            id="customer" name="userType" value="customer" required>
+                        <label for="customer">Register as Customer</label> &nbsp; &nbsp; &nbsp;
+                        <input type="radio" id="restaurant" [checked]="model.role === 'Restaurant'"
+                            (change)="OnRoleChanged('Restaurant')" name="userType" value="restaurant" required>
+                        <label for="restaurant">Register as Restaurant</label><br>
+                    </div>
+                    <br>
+                    <br>
+
+                    <p class="contact"><label for="name">First Name</label></p>
+                    <input id="name" name="name" placeholder="Enter Name" [(ngModel)]="model.name" required tabindex="2"
+                        type="text">
+
+                    <p class="contact"><label for="password">Enter a password</label></p>
+                    <input type="password" id="password" placeholder="Password" name="password" [(ngModel)]="model.password" required
+                        tabindex="">
+
+                    <p class="contact"><label for="phone">Mobile phone</label></p>
+                    <input id="phone" name="phone" placeholder="phone number" pattern="[0-9]{10}"
+                        title="Enter 10 digit mobile number" placeholder="Enter Phone Number" [(ngModel)]="model.phone"
+                        required type="tel">
+
+                    <p class="baseAddress"><label for="baseAddress">Address</label></p>
+                    <input id="baseAddress" name="baseAddress" placeholder="Address"
+                        [(ngModel)]="model.address.baseAddress" required tabindex="7" type="text">
+
+
+                    <p class="city"><label for="city">City</label></p>
+                    <input id="city" name="city" placeholder="City" [(ngModel)]="model.address.city" required
+                        tabindex="7" type="text">
+
+                    <p class="state"><label for="state">State</label></p>
+                    <input id="state" name="state" placeholder="State" [(ngModel)]="model.address.state" required
+                        tabindex="7" type="text">
+
+
+                    <p class="pincode"><label for="pincode">Pin Code</label></p>
+                    <input type="text" id="pincode" name="pincode" placeholder="Enter Pin Code" [(ngModel)]="model.address.pincode"
+                        required tabindex="9" pattern="[0-9]{6}" title="Enter 6 digit pin number">
+                    <br>
+
+                    <br>
+                    <input class="buttom" name="submit" id="submit" tabindex="9" (click)="register()"
+                        value="Sign me up!" type="submit">
+
+                    <p>Already have an Account? &nbsp; <a [routerLink]="['../login']" class="btn btn-black">Go to Login </a></p>
+
+                </form>
             </div>
-            <br>
-            <br>
-
-        <p class="contact"><label for="name">First Name</label></p>
-        <input id="name" name="name" placeholder="Enter Name" [(ngModel)]="model.name" required tabindex="2" type="text">
-
-        <p class="contact"><label for="password">Enter a password</label></p>
-        <input type="password" id="password" name="password" [(ngModel)]="model.password" required tabindex="4">
-        
-        <p class="contact"><label for="phone">Mobile phone</label></p>
-        <input id="phone" name="phone" placeholder="phone number" pattern="[0-9]{10}" title="Enter 10 digit mobile number" placeholder="Enter Phone Number" [(ngModel)]="model.phone" required type="tel">
-        
-        <p class="baseAddress"><label for="baseAddress">Address</label></p>
-        <input id="baseAddress" name="baseAddress" placeholder="Address" [(ngModel)]="model.address.baseAddress" required tabindex="7" type="text">
-
-       
-        <p class="city"><label for="city">City</label></p>
-        <input id="city" name="city" placeholder="City" [(ngModel)]="model.address.city" required tabindex="7" type="text">
-
-        <p class="state"><label for="state">State</label></p>
-        <input id="state" name="state" placeholder="State" [(ngModel)]="model.address.state" required tabindex="7" type="text">
-
-
-            <p class="pincode"><label for="pincode">Pin Code</label></p>
-            <input id="pincode" name="pincode" placeholder="Enter Pin Code" [(ngModel)]="model.address.pincode" required tabindex="9" pattern="[0-9]{6}" title="Enter 6 digit pin number">
-            <br>
-       
-        <br>
-        <input class="buttom" name="submit" id="submit" tabindex="9" (click)="register()" value="Sign me up!" type="submit">
-
-        <p>Already have an Account  <a [routerLink]="['../login']" class="btn btn-black">Go to Login </a></p>  
-
-        </form>
         </div>
     </div>
-        </div>
 </div>

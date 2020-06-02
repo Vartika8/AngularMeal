@@ -4,7 +4,6 @@ body
 font-family: 'Roboto', sans-serif;
 font-weight: 400;
 position: relative;
-float: left;
 }
 
 .heading {
@@ -16,10 +15,6 @@ font-weight: 500;
 font-size: 16px;
 padding-bottom: 60px;
 }
-
-.row {margin: 0 -5px;
-float:left;}
-
 
 p {
 color: #848484;
@@ -37,7 +32,6 @@ width: 120px;
 .parallax-section {
 background-attachment: fixed !important;
 background-size: cover !important;
-width: 100%;
 }
 
 /* preloader section */
@@ -118,6 +112,7 @@ color: white;
 background: url('/assets/images/gallery-img4.jpg') 50% 0 repeat-y fixed;
 -webkit-background-size: cover;
 background-size: cover;
+z-index: -1;
 background-position: center;
 color: #ffffff;
 display: -webkit-box;
@@ -130,8 +125,15 @@ display: flex;
       align-items: center;
 height: 60vh;
 text-align: center;
-width: 100%;
 }
+
+.right{
+    float:left;
+    font-weight: bolder;
+    margin-top: 50px;
+    margin-left: 24px;
+}
+
 #home h1 {
 font-size: 20px;
 letter-spacing: 8px;
@@ -168,25 +170,6 @@ height:63px;
 }
 
 
-
-/* restaurant */
-
-#menu{
-    padding-top: 80px;
-    padding-bottom: 80px;
-    padding-right: 50px;
-    float: left;
-    width: 100%;
-}
-#menu .card{
-    float: left;
-    height: 400px;
-    width: 250px;
-    padding-bottom: 10px;
-    
-    margin-top:50px;
-}
-
 .btn-black{
     background-color: #010203 ;
     color: #fff;
@@ -197,20 +180,26 @@ height:63px;
 	color: #fff;
 	 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  
-  margin: 0;
+/* restaurant */
+
+#postcustlogin{
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+#postcustlogin .card{
+    height: 400px;
+    width: 250px;
+    padding-bottom: 10px;
+    margin-top:50px;
 }
 
-#menu .card img{
-    height: 250px;
-    width :240px;
+#postcustlogin .card img{
+    height: 150px;
+    width :140px;
     /* border:1px solid red; */
     margin: 2px 3px;
 }
-.card-deck 
-{
-   float: left;
-   
+
+#postcustlogin .card:hover{
+    text-decoration: none;
 }

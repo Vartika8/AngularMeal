@@ -1,11 +1,15 @@
-<app-nav></app-nav>
+
 
 <!-- Menu -->
-
+<!-- <div id="menu" class="parallax-section">
+	<app-nav></app-nav>
 <section id="menu" class="parallax-section">
+			
+	
 	<div class="container">
 				<div class="row">   
 					<div class="col-md-offset-2 col-md-12 col-sm-12 text-center">
+						<br>
 				<h1 class="heading text-center">Select Your Favourites</h1>
 				<hr>
 						<h5>{{message}}</h5>
@@ -18,8 +22,8 @@
 							<div class="card-body">
 								<h5 class="card-title">{{foodItem.foodName}}</h5>
 								<p class="card-text">{{foodItem.description}}</p>
-								<div style="float: left; " ><p style="display:inline; "><span>&#8377;</span> {{foodItem.price}}</p> </div> 
-							  
+								<div style="float: left; height: 100px; " ><p style="display:inline; "><span>&#8377;</span> {{foodItem.price}}</p> </div> 
+							  <br>
 							 <a class="btn btn-black" (click)="addtoCart(foodItem.id)"> Add To Cart</a>
 							  <p class="card-text"><small class="text-muted">
 									
@@ -38,5 +42,54 @@
 		</div>
 	</div>
 </section>
+</div> -->
 
+
+
+
+
+<app-nav></app-nav>
+
+<section id="restaurant" class="parallax-section">
+	<div class="container">
+		<div class="row">   
+			<div class="col-md-offset-2 col-md-12 col-sm-12 text-center">
+				<br>
+				<h1 class="heading">Your Favorite Restaurants Here</h1>
+				<hr>
+				<h5>{{message}}</h5>
+				<!--Put a loop while fetching the data -->
+				<div  class="card-deck col-md-12 col-sm-12 text-center" >
+					 <div class="col-md-4 col-sm-4 wow fadeInUp" *ngFor="let foodItem of foods|async">
+					
+							<div class="card" style="margin-bottom: 10px; ">
+							<div>
+							 <img [src] = "imagePath[0]" style="height:100px ;  width:100px" class = "card-img-top"/>
+							 <h5 class="card-title right">{{foodItem.foodName}}</h5>
+							</div>
+							 <div class="card-body">
+							   
+							   <p class="card-text">{{foodItem.description}}</p>
+							   <p class="card-text"><span>&#8377;</span> {{foodItem.price}}</p>
+							   
+							   
+							   
+                              <a class="btn btn-black" (click)="addtoCart(foodItem.id)"> Add To Cart</a>
+							   <p class="card-text"><small class="text-muted">
+								     
+							   </small></p>
+							 </div>
+						   </div>
+							
+						</div> 
+					
+						
+							
+								
+									
+					</div>
+				</div>
+		</div>
+	</div>
+</section>
 <app-footer></app-footer>
